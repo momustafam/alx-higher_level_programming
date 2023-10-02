@@ -10,12 +10,14 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *current = list;
+	listint_t *s = list;
+	listint_t *f = list;
 
-	while (current)
+	while (s && f && f->next)
 	{
-		current = current->next;
-		if (current == list)
+		s = s->next;
+		f = f->next->next;
+		if (s == f)
 			return (1);
 	}
 	return (0);
