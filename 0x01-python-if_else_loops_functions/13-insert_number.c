@@ -16,7 +16,7 @@ listint_t *insert_node(listint_t **head, int number)
 		return NULL;
 	
 	new->n = number;
-	curr = head;
+	curr = *head;
 	prev = NULL;
 
 	/* handle empty linked list */
@@ -45,3 +45,4 @@ listint_t *insert_node(listint_t **head, int number)
 	prev->next = new;
 	new->next = curr;
 	return (new);
+}
