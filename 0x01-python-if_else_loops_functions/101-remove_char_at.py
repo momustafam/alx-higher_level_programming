@@ -6,4 +6,4 @@ def remove_char_at(str, n):
             continue
         char = str[i]
         new.append(char)
-    return "".join(new);
+    return "".join(new)
