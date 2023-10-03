@@ -5,4 +5,4 @@ def uppercase(str):
         if 97 <= asc_code < 123:
             char = chr(asc_code - 32)
         print(char, end="")
-    print()
+    print("{}".format('\n'), end="")
