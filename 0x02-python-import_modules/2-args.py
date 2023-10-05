@@ -3,7 +3,7 @@ if __name__ == "__main__":
     from sys import argv
     n_args = len(argv)
     if (n_args == 1):
-        print("0 argument.")
+        print("0 arguments.")
     elif (n_args == 2):
         print("1 argument:")
         print(f"1: {argv[1]}")
