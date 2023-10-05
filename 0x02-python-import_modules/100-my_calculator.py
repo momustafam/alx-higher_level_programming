@@ -2,6 +2,7 @@
 from sys import argv, exit
 from calculator_1 import add, sub, mul, div
 
+
 def calculator():
     '''
     calculates basic mathematical operations (+ , -, *, /)
@@ -35,6 +36,7 @@ def calculator():
         print(f"{operand1} * {operand2} = {mul(operand1, operand2)}")
     else:
         print(f"{operand1} / {operand2} = {div(operand1, operand2)}")
+
 
 if __name__ == "__main__":
     calculator()
