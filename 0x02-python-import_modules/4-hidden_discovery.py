@@ -7,4 +7,5 @@ if __name__ == "__main__":
         if mod[:2] == "__":
             continue
         unbuilt_in.append(mod)
-    print(*sorted(unbuilt_in), sep='\n')
+    unbuilt_in.sort()
+    print(*unbuilt_in, sep='\n')
