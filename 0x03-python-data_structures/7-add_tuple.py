@@ -18,7 +18,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
 
         i += 1
         if i > 1:
-            break 
+            break
     i = 0
     for elem in tuple_b:
         sum1 += elem if i == 0 else 0
