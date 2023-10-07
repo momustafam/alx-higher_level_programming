@@ -7,6 +7,9 @@ def print_matrix_integer(matrix=[[]]):
 
     Returns: NULL
     '''
+    if matrix == [[]]:
+        print()
+        return
     for row in matrix:
         n_col = len(row)
         for column in range(n_col):
