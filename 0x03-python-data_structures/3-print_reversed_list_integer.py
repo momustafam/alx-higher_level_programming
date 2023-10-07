@@ -7,7 +7,7 @@ def print_reversed_list_integer(my_list=[]):
 
     Returns: NULL
     '''
-    if len(my_list) == 0:
+    if len(my_list) is None:
         print("", end="")
     else:
         for elem in my_list[::-1]:
