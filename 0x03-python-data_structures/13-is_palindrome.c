@@ -1,69 +1,72 @@
 #include "lists.h"
 
+/**
+ * reverse_listint - reverses a linked list
+ * @head: pointer to the first node in the list
+ *
+ * Return: pointer to the first node in the new list
+ */
+void reverse_listint(listint_t **head)
+{
+	listint_t *prev = NULL;
+	listint_t *current = *head;
+	listint_t *next = NULL;
 
-int list_len(listint_t *);
+	while (current)
+	{
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
 
+	*head = prev;
+}
 
 /**
- * Description: is_palindrome - checks if a singly linked list is a palindrome
+ * is_palindrome - checks if a linked list is a palindrome
+ * @head: double pointer to the linked list
  *
- * Args:
- *	@head: (pointer): head of the linked list
- *
- * Return: 0 if it's not a palindrome, 1 if it's a palindrome
+ * Return: 1 if it is, 0 if not
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *start = *head;
-	int len = list_len(start), *arr, i, j;
+	listint_t *slow = *head, *fast = *head, *temp = *head, *dup = NULL;
 
-	if (len == 0  || len == 1)
+	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 
-	arr = malloc(sizeof(int) * (len / 2));
-
-	for (i = 0; i < len / 2; i++)
+	while (1)
 	{
-		arr[i] = start->n;
-		start = start->next;
+		fast = fast->next->next;
+		if (!fast)
+		{
+			dup = slow->next;
+			break;
+		}
+		if (!fast->next)
+		{
+			dup = slow->next->next;
+			break;
+		}
+		slow = slow->next;
 	}
 
-	if (len % 2 != 0)
-	{
-		start = start->next;
-		i++;
-	}
+	reverse_listint(&dup);
 
-	j = 0;
-	for (; i < len; i++)
+	while (dup && temp)
 	{
-		if (start->n == arr[j])
-			start = start->next;
+		if (temp->n == dup->n)
+		{
+			dup = dup->next;
+			temp = temp->next;
+		}
 		else
 			return (0);
-		j++;
 	}
-	return (1);
+
+	if (!dup)
+		return (1);
+
+	return (0);
 }
-
-
-/**
- * Description: list_len - returns the length of a linked list
- *
- * Args:
- *	@head: (pointer): head of the linked list
- *
- * Return: length of the linked list
- */
-int list_len(listint_t *head)
-{
-	int size = 0;
-
-	while (head)
-	{
-		head = head->next;
-		size++;
-	}
-	return (size);
-}
-
