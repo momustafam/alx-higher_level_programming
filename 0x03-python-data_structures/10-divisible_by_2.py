@@ -4,7 +4,7 @@ def divisible_by_2(my_list=[]):
 
     Args:
         my_list (list): the list being searched
-    
+
     Returns: a new boolean list contains True of if the number multipliy of 2
             , False otherwise
     '''
