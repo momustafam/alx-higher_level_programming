@@ -1,7 +1,7 @@
 #include "lists.h"
 
 
-listint_t *list_tail(listint_t *);
+int list_len(listint_t *);
 
 
 /**
@@ -14,54 +14,56 @@ listint_t *list_tail(listint_t *);
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *temp, *start = *head, *end = list_tail(start);
+	listint_t *start = *head;
+	int len = list_len(start), *arr, i, j;
 
-	if (!start || start == end)
+	if (len == 0  || len == 1)
 		return (1);
 
-	while (start)
+	arr = malloc(sizeof(int) * (len / 2));
+
+	for (i = 0; i < len / 2; i++)
 	{
-		if (start->n == end->n)
-		{
-			start = start->next;
-			if (start == end || start->next == end)
-				return (1);
-			temp = start->next;
-			while (temp)
-			{
-				if (temp->next == end)
-				{
-					end = temp;
-					break;
-				}
-				temp = temp->next;
-			}
-		}
-		else
-			break;
+		arr[i] = start->n;
+		start = start->next;
 	}
-	return (0);
+
+	if (len % 2 != 0)
+	{
+		start = start->next;
+		i++;
+	}
+
+	j = 0;
+	for (; i < len; i++)
+	{
+		if (start->n == arr[j])
+			start = start->next;
+		else
+			return (0);
+		j++;
+	}
+	return (1);
 }
 
 
 /**
- * Description: list_tail - returns a pointer to last node in a linked list
+ * Description: list_len - returns the length of a linked list
  *
  * Args:
  *	@head: (pointer): head of the linked list
  *
- * Return: pointer to last node
+ * Return: length of the linked list
  */
-listint_t *list_tail(listint_t *head)
+int list_len(listint_t *head)
 {
-	listint_t *end = NULL;
+	int size = 0;
 
 	while (head)
 	{
-		if (head->next == NULL)
-			end = head;
 		head = head->next;
+		size++;
 	}
-	return (end);
+	return (size);
 }
 
