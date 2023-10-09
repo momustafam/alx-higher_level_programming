@@ -34,7 +34,7 @@ int is_palindrome(listint_t **head)
 	/* split the linked list to two sublists q1, and q2 */
 	while (1)
 	{
-		if (i = q1_end)
+		if (i == q1_end)
 		{
 			temp = q2;
 			q2 = q2->next;
