@@ -6,7 +6,7 @@ def square_matrix_simple(matrix=[]):
     -----------
     matrix: 2 dimensional array
     the container being squared
- 
+
     Returns:
     --------
     new_matrix: 2 dimensional array
