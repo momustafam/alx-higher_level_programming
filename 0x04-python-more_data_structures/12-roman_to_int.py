@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if type(roman_string) != 'str' or romand_string is None:
+    if type(roman_string) != str or roman_string is None:
         return 0
+
     roman_nums = {
             'I': 1,
             'V': 5,
@@ -10,8 +11,8 @@ def roman_to_int(roman_string):
             'C': 100,
             'D': 500,
             'M': 1000
-        }
-    total = 0
+    }
+    total = roman_nums[roman_string[0]]
     prev = roman_nums[roman_string[0]]
     length = len(roman_string)
 
@@ -21,9 +22,9 @@ def roman_to_int(roman_string):
     for i in range(1, length):
         num = roman_nums[roman_string[i]]
         if num > prev:
-            total += num - prev
+            total += num - (prev * 2)
         else:
-            total += num + prev if i == 1 else num
+            total += num
         prev = num
 
     return total
