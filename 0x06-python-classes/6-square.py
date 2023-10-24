@@ -44,10 +44,11 @@ class Square:
 
     def my_print(self):
         """Print in stdout the square with the character '#'"""
+        if not self.size:
+            print()
+            return
         for i in range(self.position[1]):
             print()
         for i in range(self.size):
             print(" "*self.position[0], end="")
             print("#"*self.size)
-        if not self.size:
-            print()
