@@ -18,7 +18,7 @@ class Square:
         n_lines = self.position[1]
         n_spaces = self.position[0]
         if not self.size:
-            return string + '\n'
+            return '\n'
         string += '\n'*n_lines
         string += (" "*n_spaces + "#"*self.size + '\n')*self.size
 
