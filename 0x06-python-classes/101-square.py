@@ -14,7 +14,14 @@ class Square:
         Make the printing a Square have the same behavior as my_print method.
         """
 
-        self.my_print()
+        if not self.size:
+            return
+        for i in range(self.position[1] - 1):
+            print()
+        for i in range(self.size - 1):
+            print(" "*self.position[0], end="")
+            print("#"*self.size)
+        print(" "*self.position[0], "#"*self.size, sep="", end="")
         return ""
 
     @property
