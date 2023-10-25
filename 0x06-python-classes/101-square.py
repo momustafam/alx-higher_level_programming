@@ -14,15 +14,19 @@ class Square:
         Make the printing a Square have the same behavior as my_print method.
         """
 
+        if not self.size:
+            return "\n"
+
         string = ""
         n_lines = self.position[1]
         n_spaces = self.position[0]
-        if not self.size:
-            return '\n'
-        string += '\n'*n_lines
-        string += (" "*n_spaces + "#"*self.size + '\n')*self.size
 
-        return string[:-1]
+        string += "\n"*n_lines
+        string += (" "*n_spaces + "#"*self.size + "\n")*self.size
+
+        if string[-1] == '\n':
+            return string[:-1]
+        return string
 
     @property
     def size(self):
