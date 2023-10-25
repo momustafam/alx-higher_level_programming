@@ -15,7 +15,7 @@ class Square:
         """
 
         if not self.size:
-            return
+            return ""
         for i in range(self.position[1] - 1):
             print()
         for i in range(self.size - 1):
