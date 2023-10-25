@@ -13,15 +13,17 @@ class Square:
         """
         Make the printing a Square have the same behavior as my_print method.
         """
-
         if not self.size:
             return ""
-        for i in range(self.position[1] - 1):
+        for i in range(self.position[1]):
+            if i == self.position[1] - 1 and not self.size:
+                break
             print()
         for i in range(self.size - 1):
             print(" "*self.position[0], end="")
             print("#"*self.size)
-        print(" "*self.position[0], "#"*self.size, sep="", end="")
+        if self.size:
+            print(" "*self.position[0], "#"*self.size, sep="", end="")
         return ""
 
     @property
