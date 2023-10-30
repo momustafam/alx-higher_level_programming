@@ -58,6 +58,7 @@ def get_chessboard(n):
 
     return (rows, cols, d1, d2)
 
+
 def put_nqueens(n):
     '''
         Function that place N non-attacking queens on an NxN chessboard
@@ -73,7 +74,7 @@ def put_nqueens(n):
     sols = []
 
     while True:
-        while 1 <= cur_q <= n: 
+        while 1 <= cur_q <= n:
             found = find_place(cur_q, cols, rows, d1, d2)
             if not found and cols[cur_q]:
                 r = cols[cur_q]
@@ -85,7 +86,7 @@ def put_nqueens(n):
             elif not found:
                 cur_q -= 1
             else:
-                cur_q += 1 
+                cur_q += 1
 
         # remove the chessboard except the first column to find another sol
         # or finish the break the loop (all possible solutions found)
@@ -106,7 +107,7 @@ def put_nqueens(n):
             d1[n-1+r] = 0
             d2[r] = 0
             cur_q = 1
-        
+
     # print all possible solutions
     for sol in sols:
         print(sol)
