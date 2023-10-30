@@ -48,7 +48,14 @@ class Rectangle:
             return 0
         return (self.width + self.height) * 2
 
+    # Class Methods
+    @classmethod
+    def square(cls, size=0):
+        return cls(size, size)
+    
+
     # Static Methods
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
