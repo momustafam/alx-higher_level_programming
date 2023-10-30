@@ -26,7 +26,7 @@ class Rectangle:
                     string += '\n'
             return string
         return string
-    
+
     def area(self):
         return self.width * self.height
 
