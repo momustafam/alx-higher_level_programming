@@ -96,7 +96,7 @@ def put_nqueens(n):
             # store the solution
             sol = []
             for i in range(1, n+1):
-                sol.append([cols[i]-1, i-1])
+                sol.append([i-1, cols[i]-1])
             sols.append(sol)
             temp = cols[1]
             # clear the chessboard to search about another solution
