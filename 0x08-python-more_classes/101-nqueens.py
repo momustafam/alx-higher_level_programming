@@ -3,7 +3,6 @@
     N Queens Problem
 """
 import sys
-import time
 
 
 def find_place(q, cols, rows, d1, d2):
