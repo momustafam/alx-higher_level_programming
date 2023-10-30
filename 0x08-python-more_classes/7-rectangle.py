@@ -25,7 +25,7 @@ class Rectangle:
 
         if self.perimeter() != 0:
             for i in range(self.height):
-                string += (str(Rectangle.print_symbol) * self.width)
+                string += (str(self.print_symbol) * self.width)
                 if i != (self.height - 1):
                     string += '\n'
             return string
