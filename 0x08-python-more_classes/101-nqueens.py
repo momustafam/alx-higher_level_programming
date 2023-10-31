@@ -39,22 +39,6 @@ def find_place(q, cols, rows, d1, d2):
     return False
 
 
-def get_chessboard(n):
-    '''
-        create a chessboard
-        Args:
-        -----
-            n (int): number of rows/columns
-    '''
-    # 1 means that a new queen can use that place
-    rows = [1 for i in range(n+1)]
-    cols = [0 for i in range(n+1)]
-    d1 = [1 for i in range(2*n)]
-    d2 = d1[:]
-
-    return (rows, cols, d1, d2)
-
-
 def put_nqueens(n):
     '''
         Function that place N non-attacking queens on an NxN chessboard
@@ -62,8 +46,11 @@ def put_nqueens(n):
         -----
             N (int): number of rows and columns
     '''
-
-    rows, cols, d1, d2 = get_chessboard(n)
+    # 1 means that a new queen can use that place
+    rows = [1 for i in range(n+1)]
+    cols = [0 for i in range(n+1)]
+    d1 = [1 for i in range(2*n)]
+    d2 = d1[:]
     cur_q = 1
     found = None
     sols = []
