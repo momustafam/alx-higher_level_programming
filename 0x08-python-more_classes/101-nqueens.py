@@ -66,14 +66,8 @@ def put_nqueens(n):
             cur_q -= 1
 
         found = find_place(cur_q, cols, rows, d1, d2)
-        if not found and cols[cur_q]:
-            r = cols[cur_q]
-            rows[r] = 1
-            d1[n - cur_q + r] = 1
-            d2[r + cur_q - 1] = 1
+        if not found:
             cols[cur_q] = 0
-            cur_q -= 1
-        elif not found:
             cur_q -= 1
         else:
             cur_q += 1
