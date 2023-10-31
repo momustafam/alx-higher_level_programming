@@ -1,0 +1,49 @@
+====================================
+How to use ``2-matrix_divided`` module
+====================================
+
+This is a very simple module, since it has one function called
+``matrix_divided``.
+
+matrix_divided(matrix, div)
+===========================
+A function that divides all elements of a matrix by `div`
+
+the matrix should be a 2d array of integers/floats and with same length for all rows
+
+Args:
+-----
+	matrix (list of lists): a 2d array of integers/floats
+	
+	div (int/float): the divider
+
+Return:
+-------
+	a new matrix contains all elements of `matrix` divided by `div`
+
+Examples:
+---------
+import the matrix_divided function
+	>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+pass a matrix of int/float with `3` as a divider
+	>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+pass a matrix contains non numeric values
+	>>> matrix_divided([[1, '2', 3], [4j, '5', 6]], 3)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+pass a matrix with different lengths for its rows
+	>>> matrix_divided([[1], [2, 3], [4, 5, 6]], 3)
+	Traceback (most recent call last):
+		...
+	TypeError: Each row of the matrix must have the same size
+
+pass a matrix with `0` as a divider
+	>>> matrix_divided([[5]], 0)
+	Traceback (most recent call last):
+		...
+	ZeroDivisionError: division by zero

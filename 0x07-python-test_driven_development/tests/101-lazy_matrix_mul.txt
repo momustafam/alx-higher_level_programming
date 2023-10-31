@@ -1,0 +1,47 @@
+=====================================
+How to use ``101-lazy_matrix_mul`` module
+=====================================
+
+This is a very simple module, since it has a one function called
+``matrix_mul``.
+
+matrix_mul
+==========
+A function that multiplies two matrices.
+
+The two matrices must be list of lists and each nested list must be of integers/floats
+
+Args:
+-----
+	m_a (list): the first matrix
+	m_b (list): the second matrix
+
+Examples:
+---------
+import the matrix_mul function
+	>>> lazy_matrix_mul = __import__("101-lazy_matrix_mul").lazy_matrix_mul
+
+>>> lazy_matrix_mul(1, [2])
+Traceback (most recent call last):
+	...
+ValueError: Scalar operands are not allowed, use '*' instead
+
+>>> lazy_matrix_mul([[2], [3], [4]], [5, 6, 7])
+Traceback (most recent call last):
+	...
+ValueError: shapes (3,1) and (3,) not aligned: 1 (dim 1) != 3 (dim 0)
+
+>>> lazy_matrix_mul([], [[1], [2], [3]])
+Traceback (most recent call last):
+	...
+ValueError: shapes (0,) and (3,1) not aligned: 0 (dim 0) != 3 (dim 0)
+
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, '8']])
+Traceback (most recent call last):
+	...
+TypeError: invalid data type for einsum
+
+>>> lazy_matrix_mul([[1, 2], [3]], [[5, 6], [7, 8]])
+Traceback (most recent call last):
+	...
+TypeError: Object arrays are not currently supported

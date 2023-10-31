@@ -1,0 +1,64 @@
+===================================
+How to Use 0-add_integer.py module
+===================================
+
+This module is very simple, since it only has one funcition called
+``add_integer(a, b=98)``.
+
+add_integer(a, b=98)
+====================
+Function returns the addition of two integers
+
+Args:
+-----
+	a (numeric): the first integer
+		if a is float the decimals will ignored in the addition
+	b (numberic): the second integer with 98 deafult value
+		if b is float the decimals will ignored in the addition
+
+
+Return:
+-------
+	a + b
+
+Examples:
+---------
+import add_integer funciton from 0-add_integer.py module
+
+	>>> add_integer = __import__("0-add_integer").add_integer
+
+add two positive integers
+	>>> add_integer(5, 5)
+	10
+
+add positive integer to negative one
+	>>> add_integer(5, -5)
+	0
+
+add two negative integers
+	>>> add_integer(-5, -2)
+	-7
+
+add an integer to zero
+	>>> add_integer(0, 23)
+	23
+
+add an int to float number
+	>>> add_integer(3, 3.5)
+	6
+
+pass a non numeric value to `b` parameter
+	>>> add_integer(2, "ALX")
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
+
+pass a non numeric value to `a` parameter
+	>>> add_integer(1j, 1)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+don't pass a value for the `b` parameter
+	>>> add_integer(2)
+	100

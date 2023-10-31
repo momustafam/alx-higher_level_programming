@@ -1,0 +1,44 @@
+========================================
+How to use ``5-text_indentation`` module
+========================================
+
+The module is very simple, since it has a one function called
+``text_indentation``.
+
+text_indentation(text)
+======================
+The function prints a text with new lines after each of these characeters
+``., ?, :`` and remove any space at the begining or end of a line.
+
+The text should be a string
+
+Args:
+-----
+	text (string): the printed string
+
+Examples:
+---------
+import the function
+	>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+>>> text_indentation("Are you okay? Yes, I'am.")
+Are you okay?
+<BLANKLINE>
+Yes, I'am.
+<BLANKLINE>
+
+>>> text_indentation("I'm Mohammed Mustafa.")
+I'm Mohammed Mustafa.
+<BLANKLINE>
+
+>>> text_indentation("")
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+>>> text_indentation(['c', 's', '50'])
+Traceback (most recent call last):
+	...
+TypeError: text must be a string

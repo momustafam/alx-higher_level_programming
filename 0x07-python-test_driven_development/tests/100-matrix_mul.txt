@@ -1,0 +1,47 @@
+=====================================
+How to use ``100-matrix_mul`` module
+=====================================
+
+This is a very simple module, since it has a one function called
+``matrix_mul``.
+
+matrix_mul
+==========
+A function that multiplies two matrices.
+
+The two matrices must be list of lists and each nested list must be of integers/floats
+
+Args:
+-----
+	m_a (list): the first matrix
+	m_b (list): the second matrix
+
+Examples:
+---------
+import the matrix_mul function
+	>>> matrix_mul = __import__("100-matrix_mul").matrix_mul
+
+>>> matrix_mul(1, [2])
+Traceback (most recent call last):
+	...
+TypeError: m_a must be a list
+
+>>> matrix_mul([[2], [3], [4]], [5, 6, 7])
+Traceback (most recent call last):
+	...
+TypeError: m_b must be a list of lists
+
+>>> matrix_mul([], [[1], [2], [3]])
+Traceback (most recent call last):
+	...
+ValueError: m_a can't be empty
+
+>>> matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, '8']])
+Traceback (most recent call last):
+	...
+TypeError: m_b should contain only integers or floats
+
+>>> matrix_mul([[1, 2], [3]], [[5, 6], [7, 8]])
+Traceback (most recent call last):
+	...
+ValueError: each row of m_a must be of the same size
