@@ -47,3 +47,30 @@ pass a matrix with `0` as a divider
 	Traceback (most recent call last):
 		...
 	ZeroDivisionError: division by zero
+
+pass a list of lists of integers with string divider
+	>>> matrix_divided([[1, 2, 3], [4, 5, 6]], '2')
+	Traceback (most recent call last):
+		...
+	TypeError: div must be a number
+
+pass a list of lists of integers with float(inf) as a divider
+	>>> matrix_divided([[1, 2, 3]], float("inf"))
+	[[0.0, 0.0, 0.0]]
+
+Test: missing one argument
+	>>> matrix_divided([[1, 2, 3]])
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+	>>> matrix_divided(div=4)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_divided() missing 1 required positional argument: 'matrix'
+
+Test: missing two arguments
+	>>> matrix_divided()
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
