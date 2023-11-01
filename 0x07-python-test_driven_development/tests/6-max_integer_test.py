@@ -21,14 +21,18 @@ class TestMaxInteger(unittest.TestCase):
         t1 = [1, 2, 3, float("NaN"), 4, 5]
         t2 = t1[::-1]
         t3 = [3.0, 235.1352, 52.45, 89.234, 289.123, float("inf"), 1e10]
-        t4 = [-2, 0, 2, -5, -10, 34]
+        t4 = [2, 0, 2, -5, 10, 34]
         t5 = [10 for i in range(5)]
+        t6 = [-10 for i in range(5)]
+        t7 = [2]
 
         self.assertEqual(max_integer(t1), 5)
         self.assertEqual(max_integer(t2), 5)
         self.assertEqual(max_integer(t3), float("inf"))
         self.assertEqual(max_integer(t4), 34)
         self.assertEqual(max_integer(t5), 10)
+        self.assertEqual(max_integer(t6), -10)
+        self.assertEqual(max_integer(t7), 2)
 
     def test_empty_inputs(self):
         '''Test max_integer outputs by passing empty inputs'''
