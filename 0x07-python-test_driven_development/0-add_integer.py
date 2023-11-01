@@ -11,7 +11,7 @@ def add_integer(a, b=98):
         Return addition of 2 integers
     """
 
-    if not (isinstance(a, int) or isinstance(a, float) or b == float("NaN"):
+    if not (isinstance(a, int) or isinstance(a, float) or a == float("NaN"):
         raise TypeError("a must be an integer")
     elif isinstance(a, float):
         a = int(a)
