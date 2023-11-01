@@ -18,6 +18,11 @@ def matrix_divided(matrix, div):
     if not isinstance(matrix, list):
         raise TypeError(errr_mess)
 
+    if not (isinstance(div, float) or isinstance(div, int)):
+        raise TypeError("div must be a number")
+    elif div == 0:
+        raise ZeroDivisionError("division by zero")
+
     for i in range(len(matrix)):
         row = matrix[i]
         if not isinstance(row, list):
@@ -33,11 +38,5 @@ def matrix_divided(matrix, div):
             if not (isinstance(elem, int) or isinstance(elem, float)):
                 raise TypeError(err_mess)
             new_matrix[i].append(round(elem / div, 2))
-
-    if not (isinstance(div, float) or isinstance(div, int)):
-        raise TypeError("div must be a number")
-
-    elif div == 0:
-        raise ZeroDivisionError("division by zero")
 
     return new_matrix
