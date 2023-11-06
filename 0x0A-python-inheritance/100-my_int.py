@@ -8,9 +8,9 @@ class MyInt(int):
     def __eq__(self, other):
         '''equal method'''
 
-        return self != other
+        super().__ne__(other)
 
     def __ne__(self, other):
         '''not equal method'''
 
-        return self == other
+        super().__eq__(other)
