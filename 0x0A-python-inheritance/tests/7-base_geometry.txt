@@ -1,0 +1,33 @@
+==============================
+The ``7-base_geometry`` module
+==============================
+
+Using ``BaseGeometry`` class
+-----------------------------
+import base_geometry
+	>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+create an instance of the class
+	>>> a = BaseGeometry()
+
+checking the area method
+	>>> a.area()
+	Traceback (most recent call last):
+		...
+	Exception: area() is not implemented
+
+cheking the integer_validator method
+	>>> a.integer_validator("Mohammed", "easy task")
+	Traceback (most recent call last):
+		...
+	TypeError: Mohammed must be an integer
+
+	>>> a.integer_validator("Mohammed", -1)
+	Traceback (most recent call last):
+		...
+	ValueError: Mohammed must be greater than 0
+
+	>>> a.integer_validator("Mohammed", 0)
+	Traceback (most recent call last):
+		...
+	ValueError: Mohammed must be greater than 0
