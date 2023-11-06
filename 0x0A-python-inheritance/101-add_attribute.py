@@ -8,4 +8,4 @@ def add_attribute(obj, name, value):
     elif not hasattr(obj, name) and hasattr(obj, '__slots_'):
         raise TypeError("can't add new attribute")
 
-    obj.name = value
+    setattr(obj, name, value)
