@@ -1,23 +1,37 @@
 #!/usr/bin/python3
-'''
-    The Square module
-'''
+"""Module 10-square
+Creates a square class
+"""
 
 
-Rectangle = __import__("8-rectangle").Rectangle
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
+Rectangle = __import__('9-rectangle').Rectangle
+
 
 class Square(Rectangle):
-    '''
-        The Square class
-    '''
+    """Represents a square
+    Private instance attribute size
+    Public method area()
+    Inherits from Rectangle
+    """
 
     def __init__(self, size):
-        '''Initialize an objec of Square class'''
+        """Initializes a Square
+
+        Args:
+            - size: squzre size
+        """
 
         self.integer_validator("size", size)
+        super().__init__(size, size)
         self.__size = size
 
-    def area(self):
-        '''Calculate the area of a square'''
+    def __str__(self):
+        return super().__str__()
 
-        return size**2
+    def area(self):
+        """Computes the area of a Square instance
+        Ovewrites the area() method from Rectangle
+        """
+
+        return self.__size ** 2
