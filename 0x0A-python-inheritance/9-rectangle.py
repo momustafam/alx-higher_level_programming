@@ -32,4 +32,4 @@ class Rectangle(BaseGeometry):
     def __str__(self):
         '''overwrite the built-in str function'''
 
-        return f"[Rectangle] {width}/{<height}
+        return f"[Rectangle] {self.__width}/{self.__height}"
