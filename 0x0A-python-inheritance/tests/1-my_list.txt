@@ -2,8 +2,8 @@
 The ``1-my_list`` module
 ========================
 
-Using ``MyList``
-----------------------
+Using ``MyList.print_sorted()``
+-------------------------------
 
 Import function form its module
 	>>> print_sorted = __import__("1-my_list").MyList.print_sorted
