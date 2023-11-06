@@ -4,7 +4,7 @@ The ``1-my_list`` module
 Using ``print_sorted``
 ----------------------
 
-import function form its module
+Import function form its module
 	>>> print_sorted = __import__("1-my_list").MyList.print_sorted
 
 # Check the correctness of output
