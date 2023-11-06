@@ -1,7 +1,8 @@
+========================
 The ``1-my_list`` module
 ========================
 
-Using ``print_sorted``
+Using ``MyList``
 ----------------------
 
 Import function form its module
