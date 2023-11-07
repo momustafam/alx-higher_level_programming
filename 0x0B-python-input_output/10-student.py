@@ -15,7 +15,7 @@ class Student:
 
         if type(attr) == list:
             for name in attr:
-                if type(name) != str:
+                if type(name) is not str:
                     return self.__dict__
                 else:
                     x[name] = self.__dict__[name]
