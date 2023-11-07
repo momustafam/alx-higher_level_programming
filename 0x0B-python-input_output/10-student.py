@@ -13,7 +13,7 @@ class Student:
     def to_json(self, attr=None):
         x = {}
 
-        if type(attr) == list:
+        if type(attr) is list:
             for name in attr:
                 if type(name) is not str:
                     return self.__dict__
