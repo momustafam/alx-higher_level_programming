@@ -17,3 +17,5 @@ def add_item():
 
     data.extend(args)
     save_to_json_file(data, "add_item.json")
+
+add_item()
