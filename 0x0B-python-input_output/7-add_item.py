@@ -8,14 +8,14 @@ load = __import__("6-load_from_json_file").load_from_json_file
 
 def add_item():
     f_name = "add_item.json"
-    args = list(sys.argv[1:])
 
     try:
         data = load("add_item.json")
     except Exception:
         data = []
 
-    data.extend(args)
-    save(data, "add_item.json")
+    if len(argv) > 1:
+        data.extend(argv[1:])
+        save(data, "add_item.json")
 
 add_item()
