@@ -56,8 +56,9 @@ class Base:
 
         with open(f"{cls.__name__}.json", "w", encoding="utf-8") as f:
             temp = []
-            for obj in list_objs:
-                temp.append(obj.to_dictionary())
+            if list_objs:
+                for obj in list_objs:
+                    temp.append(obj.to_dictionary())
             f.write(cls.to_json_string(temp))
 
     @classmethod
