@@ -94,6 +94,7 @@ were given"
 'list_dictionaries'"
         self.assertEqual(str(e.exception), s)
 
+        self.assertEqual(Base.to_json_string([ { 'id': 12 }]), "[{\"id\": 12}]")
         self.assertEqual(Base.to_json_string(None), "[]")
         self.assertEqual(Base.to_json_string([]), "[]")
         d = [{'x': 101, 'y': 20123, 'width': 312321, 'id': 522244,

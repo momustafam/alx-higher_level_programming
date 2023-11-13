@@ -44,6 +44,8 @@ class TestRectangle(unittest.TestCase):
         '''Tests constructor signature.'''
         with self.assertRaises(TypeError) as e:
             r = Rectangle(1)
+        obj = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 })
+        self.assertTrue(obj)
 
     def test_D_instantiation(self):
         '''Tests instantiation.'''
