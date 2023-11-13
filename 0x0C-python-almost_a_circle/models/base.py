@@ -24,7 +24,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        '''Instanitiate an object of the Base class.'''
+        '''Instantiate an object of the Base class.'''
 
         if id is not None:
             self.id = id
@@ -119,41 +119,33 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
-        """Draw Rectangles and Squares using the turtle module.
+        '''
+            Open a window using turtle and draw all rectangles and squares.
+        '''
 
-        Args:
-            list_rectangles (list): A list of Rectangle objects to draw.
-            list_squares (list): A list of Square objects to draw.
-        """
-        turt = turtle.Turtle()
-        turt.screen.bgcolor("#b7312c")
-        turt.pensize(3)
-        turt.shape("turtle")
+        screen = turtle.Screen()
+        screen.bgcolor("black")
+        pen = turtle.Turtle()
+        pen.pencolor("yellow")
+        pen.fillcolor("red")
 
-        turt.color("#ffffff")
+
         for rect in list_rectangles:
-            turt.showturtle()
-            turt.up()
-            turt.goto(rect.x, rect.y)
-            turt.down()
+            pen.penup()
+            pen.goto(rect.x, rect.y)
+            pen.pendown()
             for i in range(2):
-                turt.forward(rect.width)
-                turt.left(90)
-                turt.forward(rect.height)
-                turt.left(90)
-            turt.hideturtle()
+                pen.forward(rect.width)
+                pen.left(90)
+                pen.forward(rect.height)
+                pen.left(90)
 
-        turt.color("#b5e3d8")
         for sq in list_squares:
-            turt.showturtle()
-            turt.up()
-            turt.goto(sq.x, sq.y)
-            turt.down()
-            for i in range(2):
-                turt.forward(sq.width)
-                turt.left(90)
-                turt.forward(sq.height)
-                turt.left(90)
-            turt.hideturtle()
+            pen.penup()
+            pen.goto(sq.x, sq.y)
+            pen.pendown()
+            for i in range(4):
+                pen.forward(sq.size)
+                pen.left(90)
 
-        turtle.exitonclick()
+        turtle.done()
