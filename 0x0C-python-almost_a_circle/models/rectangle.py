@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 '''
-	The `Rectangle` Module.
+        The `Rectangle` Module.
 
-	Classes:
-		- Rectangle
+        Classes:
+            - Rectangle
 '''
 
 from models.base import Base
@@ -20,7 +20,8 @@ class Rectangle(Base):
         super().__init__(id)
 
     def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} \
+- {self.width}/{self.height}"
 
     def area(self):
         '''Calculate the area of the rectangle.'''
@@ -87,7 +88,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-	    return self.__height
+        return self.__height
 
     @height.setter
     def height(self, value):
@@ -109,7 +110,7 @@ class Rectangle(Base):
         elif value < 0:
             raise ValueError("x must be >= 0")
 
-        self.__x= value
+        self.__x = value
 
     @property
     def y(self):

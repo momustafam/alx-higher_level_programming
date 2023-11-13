@@ -9,19 +9,20 @@ from models.base import Base
 
 
 class TestBase(unittest.TestCase):
-	'''Test the `Base` Class.'''
+    '''Test the `Base` class.'''
 
-	def test_instantiation(self):
-		'''Checking that the new instance of the class with a right id value.'''
+    def setUp(self):
+        self.base1 = Base()
+        self.base2 = Base()
 
-		base1 = Base()
-		base2 = Base(10)
-		base3 = Base()
 
-		self.assertEqual(base1.id, 1)
-		self.assertEqual(base2.id, 10)
-		self.assertEqual(base3.id, 2)
+    def test__init__(self):
+        '''Checking the constructor of the class.'''
 
+        self.base3 = Base(10)
+        self.assertEqual(self.base1.id, 1)
+        self.assertEqual(self.base2.id, 2)
+        self.assertEqual(self.base3.id, 10)
 
 if __name__ == '__main__':
     unittest.main()

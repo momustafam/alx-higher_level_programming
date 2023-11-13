@@ -3,12 +3,13 @@
     The `Base` module
 
     Classes:
-        Base 
+        Base
 '''
 
 import json
 import csv
 import turtle
+
 
 class Base:
     '''
@@ -128,7 +129,6 @@ class Base:
         pen = turtle.Turtle()
         pen.pencolor("yellow")
         pen.fillcolor("red")
-
 
         for rect in list_rectangles:
             pen.penup()
