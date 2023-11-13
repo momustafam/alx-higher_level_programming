@@ -54,11 +54,11 @@ class Base:
     def save_to_file(cls, list_objs):
         '''Write the json string representation `list_objs` to a file.'''
 
-        with open(f"{cls.__name__}.json", "w") as f:
+        with open(f"{cls.__name__}.json", "w", encoding="utf-8") as f:
             temp = []
             for obj in list_objs:
                 temp.append(obj.to_dictionary())
-            f.write(Base.to_json_string(temp))
+            f.write(cls.to_json_string(temp))
 
     @classmethod
     def create(cls, **dictionary):
@@ -81,20 +81,16 @@ class Base:
                     obj = cls.create(**obj_attr)
                     objs.append(obj)
         except FileNotFoundError:
-            print("not found")
+            pass
         finally:
             return objs
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
         '''Write a json string representation `list_obj` to a csv file.'''
-        with open(f"{cls.__name__}.csv", "w") as f:
+        with open(f"{cls.__name__}.csv", "w", encoding="utf-8") as f:
             writer = csv.writer(f)
             data = []
-            if cls.__name__ == 'Rectangle':
-                data.append(['id', 'width', 'height', 'x', 'y'])
-            elif cls.__name__ == 'Square':
-                data.append(['id', 'size', 'x', 'y'])
             for obj in list_objs:
                 data.append(obj.to_dictionary().values())
             writer.writerows(data)
@@ -107,7 +103,6 @@ class Base:
         try:
             with open(f"{cls.__name__}.csv") as f:
                 reader = csv.reader(f)
-                next(reader)
                 for row in reader:
                     row = list(map(int, row))
                     obj = cls(1, 1)
@@ -130,22 +125,14 @@ class Base:
         pen.pencolor("yellow")
         pen.fillcolor("red")
 
-        for rect in list_rectangles:
+        for shape in list_rectangles + list_squares:
             pen.penup()
-            pen.goto(rect.x, rect.y)
+            pen.goto(shape.x, shape.y)
             pen.pendown()
             for i in range(2):
-                pen.forward(rect.width)
+                pen.forwardi(shape.width)
                 pen.left(90)
-                pen.forward(rect.height)
-                pen.left(90)
-
-        for sq in list_squares:
-            pen.penup()
-            pen.goto(sq.x, sq.y)
-            pen.pendown()
-            for i in range(4):
-                pen.forward(sq.size)
+                pen.forward(shape.height)
                 pen.left(90)
 
         turtle.done()
