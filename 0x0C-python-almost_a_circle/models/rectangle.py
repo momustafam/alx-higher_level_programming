@@ -13,6 +13,8 @@ class Rectangle(Base):
     '''A Rectangle Class that inherits from Base class'''
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        '''Instantiate an object of Rectangle class.'''
+
         self.width = width
         self.height = height
         self.x = x
@@ -20,6 +22,8 @@ class Rectangle(Base):
         super().__init__(id)
 
     def __str__(self):
+        '''Return string representation of the class.'''
+
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} \
 - {self.width}/{self.height}"
 
@@ -64,6 +68,8 @@ class Rectangle(Base):
                     self.y = value
 
     def to_dictionary(self):
+        '''Return all rectangle attributes in a dictionary.'''
+
         rect_dict = {}
         rect_dict['id'] = self.id
         rect_dict['width'] = self.width
