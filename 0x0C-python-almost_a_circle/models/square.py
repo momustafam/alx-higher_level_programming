@@ -12,6 +12,8 @@ class Square(Rectangle):
     '''
 
     def __init__(self, size, x=0, y=0, id=None):
+        '''Instantiate an object of Square class.'''
+
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
@@ -46,6 +48,8 @@ class Square(Rectangle):
                     self.y = value
 
     def to_dictionary(self):
+        '''Return dictionary representation of an square object.'''
+
         squ_dict = {}
         squ_dict['id'] = self.id
         squ_dict['size'] = self.size
