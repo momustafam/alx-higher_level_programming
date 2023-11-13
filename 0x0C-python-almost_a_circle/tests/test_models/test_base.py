@@ -85,6 +85,9 @@ were given"
         b = Base(id=i)
         self.assertEqual(b.id, i)
 
+    def easy(self):
+        self.assertEqual(Base.to_json_string([ { 'id': 12 }]), "[{\"id\": 12}]")
+
     # ----------------- Tests for #15 ------------------------
     def test_H_to_json_string(self):
         '''Tests to_json_string() signature:'''
@@ -94,7 +97,6 @@ were given"
 'list_dictionaries'"
         self.assertEqual(str(e.exception), s)
 
-        self.assertEqual(Base.to_json_string([ { 'id': 12 }]), "[{\"id\": 12}]")
         self.assertEqual(Base.to_json_string(None), "[]")
         self.assertEqual(Base.to_json_string([]), "[]")
         d = [{'x': 101, 'y': 20123, 'width': 312321, 'id': 522244,
