@@ -65,7 +65,10 @@ class Base:
     def create(cls, **dictionary):
         '''Return an instance with all attributes already set.'''
 
-        dummy = cls(1, 1)
+        if cls is Rectangle:
+            dummy = cls(1, 1)
+        else:
+            dummy = cls(1)
         dummy.update(**dictionary)
 
         return dummy
