@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# remove useless files
-rm *~
-rm *.s*
-
 # make the files of tasks are executable
 chmod u+x *
 
