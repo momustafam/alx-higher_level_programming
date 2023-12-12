@@ -1,0 +1,6 @@
+-- task 19
+-- average of temperatures grouped by cities
+SELECT city, AVG(value) as avg_temp
+	FROM temperatures
+	GROUP BY city
+	ORDER BY avg_temp DESC;
