@@ -1,0 +1,2 @@
+#!/bin/env bash
+cat $1 | mysql -hlocalhost -uroot -p
