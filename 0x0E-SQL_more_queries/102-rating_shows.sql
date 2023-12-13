@@ -1,5 +1,4 @@
-/* A script that lists all shows from hbtn_0d_tvshows_rate by their rate. */
--- task 20
+-- task 20 (get the sum of rates of each show)
 SELECT tv_shows.title, SUM(tv_show_ratings.rate) AS rating
 	FROM tv_shows
 		LEFT JOIN tv_show_ratings
