@@ -1,5 +1,4 @@
-/* A script that uses the hbtn_0d_tvshows databases to lists all genres
-of the show `Dexter` */
+/* A script that uses the hbtn_0d_tvshows databases to lists all genres of the show `Dexter` */
 -- task 15
 SELECT g.name
 	FROM tv_genres AS g
