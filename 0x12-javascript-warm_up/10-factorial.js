@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const argv = prcoess.argv;
+const argv = process.argv;
 const arg1 = parseInt(argv[2]);
 function factorial(a) {
   if (a === 0 || a === 1) {
