@@ -16,7 +16,7 @@ def main():
     db_name = argv[3]
 
     db = MySQLdb.connect(host="localhost", user=username,
-                         passwd=password, db=db_name)
+                         passwd=password, db=db_name, port=3306)
     cur = db.cursor()
     cur.execute('''
                 SELECT *
