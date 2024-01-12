@@ -23,7 +23,7 @@ def main():
     cur.execute("""
                 SELECT *
                 FROM states
-                WHERE name = '{}'
+                WHERE name LIKE BINARY '{}'
                 ORDER BY id
                 """.format(key))
 
@@ -36,4 +36,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    imain()
