@@ -26,7 +26,10 @@ def main():
     rows = cur.fetchall()
     for i in range(len(rows) - 1):
         print(rows[i][0], end=", ")
-    print(rows[i+1][0])
+    if (rows):
+        print(rows[i+1][0])
+    else:
+        print()
 
     cur.close()
     db.close()
