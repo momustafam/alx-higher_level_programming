@@ -14,7 +14,7 @@ def first_state(username, password, db_name):
     '''
 
     engine = create_engine(
-        "mysql+mysqldb://{username}:{password}@localhost:3306/db_name"
+        f"mysql+mysqldb://{username}:{password}@localhost:3306/{db_name}"
     )
     Session = sessionmaker(bind=engine)
 
