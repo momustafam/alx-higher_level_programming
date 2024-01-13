@@ -26,5 +26,6 @@ def add_state(user, pas, db):
     print(louisiana.id)
     session.close()
 
+
 if __name__ == "__main__":
     add_state(argv[1], argv[2], argv[3])
