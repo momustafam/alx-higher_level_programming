@@ -7,6 +7,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
+
 def main():
     '''Lists all `State` objects from the database hbtn_0e_6_usa.'''
 
@@ -14,7 +15,8 @@ def main():
     password = argv[2]
     db = argv[3]
 
-    engine = create_engine(f"mysql+mysqldb://{username}:{password}@localhost:3306/{db}",) 
+    engine = create_engine(f"""mysql+mysqldb://{username}:
+                            {password}@localhost:3306/{db}""")
     Session = sessionmaker(bind=engine)
     session = Session()
     states = session.query(State).order_by(State.id).all()
