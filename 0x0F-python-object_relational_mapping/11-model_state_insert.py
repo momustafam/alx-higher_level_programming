@@ -19,12 +19,12 @@ def add_state(user, pas, db):
             )
     Session = sessionmaker(engine)
     louisiana = State(name="Louisiana")
-
-    with Session() as session:
-        session.add(louisiana)
+    session = Session()
+    session.add(louisiana)
+    session.commit()
 
     print(louisiana.id)
-
+    session.close()
 
 if __name__ == "__main__":
     add_state(argv[1], argv[2], argv[3])
