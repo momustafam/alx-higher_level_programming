@@ -20,7 +20,7 @@ def create_state(usr, pas, db):
     Session = sessionmaker(engine)
     session = Session()
     san_francisco = State(name="California",
-                          cities=[City(name="San Francsico")])
+                          cities=[City(name="San Francisco")])
 
     session.add(san_francisco)
     session.commit()
