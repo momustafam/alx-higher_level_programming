@@ -21,9 +21,9 @@ def delete_state_a(user, pas, db):
     Session = sessionmaker(engine)
     session = Session()
 
-    states_to_delete = session.query(State).filter(State.name.like("%a%")).all()
+    states_to_del = session.query(State).filter(State.name.like("%a%")).all()
 
-    for state in states_to_delete:
+    for state in states_to_del:
         session.delete(state)
 
     session.commit()
