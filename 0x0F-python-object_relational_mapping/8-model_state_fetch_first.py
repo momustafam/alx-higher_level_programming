@@ -23,7 +23,7 @@ def first_state(username, password, db_name):
     if state:
         print(f"{state.id}: {state.name}")
     else:
-        print()
+        print("Nothing")
 
 
 if __name__ == "__main__":
