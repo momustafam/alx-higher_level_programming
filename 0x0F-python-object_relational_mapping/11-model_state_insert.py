@@ -22,7 +22,6 @@ def add_state(user, pas, db):
 
     with Session() as session:
         session.add(louisiana)
-        session.commit()
 
     print(louisiana.id)
 
