@@ -5,12 +5,8 @@
     found in the header of the response.
 """
 import urllib.request
-import sys
+from sys import argv
 
-
-if __name__ == "__main__":
-    url = sys.argv[1]
-
-    request = urllib.request.Request(url)
-    with urllib.request.urlopen(request) as resp:
-        print(dict(resp.headers).get("X-Request-Id"))
+url = argv[1]
+with urllib.request.urlopen(url) as response:
+    print(response.info()['X-Request-Id'])
