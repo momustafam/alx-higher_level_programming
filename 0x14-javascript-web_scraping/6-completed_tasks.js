@@ -14,7 +14,6 @@ rq.get(url, (_, __, body) => {
     completed = todos[i].completed;
     if (completed && userId in nComp) nComp[userId] += 1;
     else if (completed && !(userId in nComp)) nComp[userId] = 1;
-    else if (!completed && !(userId in nComp)) nComp[userId] = 0;
   }
   console.log(nComp);
 });
